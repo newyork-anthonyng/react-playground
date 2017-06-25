@@ -34,30 +34,39 @@ class StarRating extends Component {
       const key = `${i + 1} rating`;
       stars.push(
         <li key={i}>
+          <label
+            htmlFor={key}
+            aria-label={key}
+          >
           <input
             type="radio"
             id={key}
             value={key}
-            style={{ display: 'none' }}
-          />
-          <label
-            htmlFor={key}
+            style={{ '-webkit-appearance': 'none' }}
+            name="StarRating"
             onClick={this.handleClick(i + 1)}
             onMouseEnter={this.handleMouseEnter(i + 1)}
             onMouseLeave={this.handleMouseLeave(i + i)}
-          >
+            checked={(i + 1) === this.props.value}
+          />
             {i < this.props.value ? this.filledStar : this.emptyStar}
           </label>
         </li>
       );
     }
 
-    return <ul style={{ display: 'flex', listStyle: 'none', padding: 0 }}>{stars}</ul>
+    return stars
   }
 
   render() {
     return (
-      <div>{this.renderStars()}</div>
+      <ul
+        style={{ display: 'flex', listStyle: 'none', padding: 0 }}
+        role="radiogroup"
+        aria-label={`${this.props.value + 1} rating`}
+      >
+        {this.renderStars()}
+      </ul>
     );
   }
 }
