@@ -1,3 +1,15 @@
+## A Sandbox environment where I create React Components
+
+To see all the components, run `storybook` with:
+```shell
+npm run storybook
+```
+
+Components added:
+1. StarRating (similar to one used for Yelp)
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
