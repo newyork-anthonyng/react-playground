@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+<SkipLink
+  href="#footer"
+>
+  <glamorous(a)
+    href="#footer"
+  >
+    <a
+      className="css-s1tdzo"
+      href="#footer"
+    >
+      Skip to Navigation
+    </a>
+  </glamorous(a)>
+</SkipLink>
+`;
