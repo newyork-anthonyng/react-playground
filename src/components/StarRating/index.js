@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
 import T from 'prop-types';
 import noop from '../../utility/noop';
+import glamorous from 'glamorous';
+
+const Input = glamorous.input({
+  WebkitAppearance: 'none',
+  ':focus + label': {
+    border: '3px solid blue',
+    borderRadius: '3px',
+  },
+});
 
 class StarRating extends Component {
   constructor() {
@@ -34,21 +43,20 @@ class StarRating extends Component {
       const key = `${i + 1} rating`;
       stars.push(
         <li key={i}>
-          <label
-            htmlFor={key}
-            aria-label={key}
-          >
-          <input
+          <Input
             type="radio"
             id={key}
             value={key}
-            style={{ '-webkit-appearance': 'none' }}
             name="StarRating"
             onClick={this.handleClick(i + 1)}
             onMouseEnter={this.handleMouseEnter(i + 1)}
             onMouseLeave={this.handleMouseLeave(i + i)}
             checked={(i + 1) === this.props.value}
           />
+          <label
+            htmlFor={key}
+            aria-label={key}
+          >
             {i < this.props.value ? this.filledStar : this.emptyStar}
           </label>
         </li>
