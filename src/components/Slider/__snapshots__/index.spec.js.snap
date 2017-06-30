@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Key press should move the slider when pressing DOWN 1`] = `
+Object {
+  "transform": "translateX(9px)",
+}
+`;
+
+exports[`Key press should move the slider when pressing LEFT 1`] = `
+Object {
+  "transform": "translateX(9px)",
+}
+`;
+
+exports[`Key press should move the slider when pressing RIGHT 1`] = `
+Object {
+  "transform": "translateX(1px)",
+}
+`;
+
+exports[`Key press should move the slider when pressing UP 1`] = `
+Object {
+  "transform": "translateX(1px)",
+}
+`;
+
+exports[`should add event listeners on mount 1`] = `
+Array [
+  Array [
+    "scroll",
+    [Function],
+    false,
+  ],
+  Array [
+    "mousemove",
+    [Function],
+  ],
+  Array [
+    "mouseup",
+    [Function],
+  ],
+]
+`;
+
+exports[`should do nothing if mouse is moving, and not dragging 1`] = `
+Object {
+  "transform": "translateX(0px)",
+}
+`;
+
+exports[`should have a maximum value when dragging slider 1`] = `
+Object {
+  "transform": "translateX(300px)",
+}
+`;
+
+exports[`should have a minimum value of 0 when dragging slider 1`] = `
+Object {
+  "transform": "translateX(0px)",
+}
+`;
+
+exports[`should move the slider on touch 1`] = `
+Object {
+  "transform": "translateX(50px)",
+}
+`;
+
+exports[`should move the slider when dragging 1`] = `
+Object {
+  "transform": "translateX(50px)",
+}
+`;
+
+exports[`should remove event listeners on unmount 1`] = `
+Array [
+  Array [
+    "mousemove",
+    [Function],
+  ],
+  Array [
+    "mouseup",
+    [Function],
+  ],
+]
+`;
+
+exports[`should stop moving the slider on mouse up 1`] = `
+Object {
+  "transform": "translateX(50px)",
+}
+`;
