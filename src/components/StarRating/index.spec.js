@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import toJSON from 'enzyme-to-json';
 import noop from '../../utility/noop';
 import StarRating from './';
@@ -35,14 +35,13 @@ it('should render its value correctly', () => {
 
 it('should run callback when clicking on star', () => {
   const cb = jest.fn();
-  const wrapper = shallow(
+  const wrapper = mount(
     <StarRating
       {...defaultProps}
       onChange={cb}
     />
   );
-  const secondStar = wrapper.find('input[type="radio"]').at(1);
-
+  const secondStar = wrapper.find('input').at(1);
   secondStar.simulate('click');
 
   expect(cb).toHaveBeenCalledTimes(1);
@@ -51,7 +50,7 @@ it('should run callback when clicking on star', () => {
 
 it('should run callback when mouse enters a star', () => {
   const cb = jest.fn();
-  const wrapper = shallow(
+  const wrapper = mount(
     <StarRating
       {...defaultProps}
       onMouseEnter={cb}
@@ -67,7 +66,7 @@ it('should run callback when mouse enters a star', () => {
 
 it('should run callback when mouse leaves a star', () => {
   const cb = jest.fn();
-  const wrapper = shallow(
+  const wrapper = mount(
     <StarRating
       {...defaultProps}
       onMouseLeave={cb}

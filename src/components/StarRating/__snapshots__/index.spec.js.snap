@@ -13,117 +13,92 @@ exports[`should render its value correctly 1`] = `
   }
 >
   <li>
+    <glamorous(input)
+      checked={false}
+      id="1 rating"
+      name="StarRating"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      type="radio"
+      value="1 rating"
+    />
     <label
       aria-label="1 rating"
       htmlFor="1 rating"
     >
-      <input
-        checked={false}
-        id="1 rating"
-        name="StarRating"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        style={
-          Object {
-            "WebkitAppearance": "none",
-          }
-        }
-        type="radio"
-        value="1 rating"
-      />
       ★
     </label>
   </li>
   <li>
+    <glamorous(input)
+      checked={false}
+      id="2 rating"
+      name="StarRating"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      type="radio"
+      value="2 rating"
+    />
     <label
       aria-label="2 rating"
       htmlFor="2 rating"
     >
-      <input
-        checked={false}
-        id="2 rating"
-        name="StarRating"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        style={
-          Object {
-            "WebkitAppearance": "none",
-          }
-        }
-        type="radio"
-        value="2 rating"
-      />
       ★
     </label>
   </li>
   <li>
+    <glamorous(input)
+      checked={true}
+      id="3 rating"
+      name="StarRating"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      type="radio"
+      value="3 rating"
+    />
     <label
       aria-label="3 rating"
       htmlFor="3 rating"
     >
-      <input
-        checked={true}
-        id="3 rating"
-        name="StarRating"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        style={
-          Object {
-            "WebkitAppearance": "none",
-          }
-        }
-        type="radio"
-        value="3 rating"
-      />
       ★
     </label>
   </li>
   <li>
+    <glamorous(input)
+      checked={false}
+      id="4 rating"
+      name="StarRating"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      type="radio"
+      value="4 rating"
+    />
     <label
       aria-label="4 rating"
       htmlFor="4 rating"
     >
-      <input
-        checked={false}
-        id="4 rating"
-        name="StarRating"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        style={
-          Object {
-            "WebkitAppearance": "none",
-          }
-        }
-        type="radio"
-        value="4 rating"
-      />
       ☆
     </label>
   </li>
   <li>
+    <glamorous(input)
+      checked={false}
+      id="5 rating"
+      name="StarRating"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      type="radio"
+      value="5 rating"
+    />
     <label
       aria-label="5 rating"
       htmlFor="5 rating"
     >
-      <input
-        checked={false}
-        id="5 rating"
-        name="StarRating"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        style={
-          Object {
-            "WebkitAppearance": "none",
-          }
-        }
-        type="radio"
-        value="5 rating"
-      />
       ☆
     </label>
   </li>
@@ -143,232 +118,182 @@ exports[`should render stars depending on its size 1`] = `
   }
 >
   <li>
+    <glamorous(input)
+      checked={false}
+      id="1 rating"
+      name="StarRating"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      type="radio"
+      value="1 rating"
+    />
     <label
       aria-label="1 rating"
       htmlFor="1 rating"
     >
-      <input
-        checked={false}
-        id="1 rating"
-        name="StarRating"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        style={
-          Object {
-            "WebkitAppearance": "none",
-          }
-        }
-        type="radio"
-        value="1 rating"
-      />
       ☆
     </label>
   </li>
   <li>
+    <glamorous(input)
+      checked={false}
+      id="2 rating"
+      name="StarRating"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      type="radio"
+      value="2 rating"
+    />
     <label
       aria-label="2 rating"
       htmlFor="2 rating"
     >
-      <input
-        checked={false}
-        id="2 rating"
-        name="StarRating"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        style={
-          Object {
-            "WebkitAppearance": "none",
-          }
-        }
-        type="radio"
-        value="2 rating"
-      />
       ☆
     </label>
   </li>
   <li>
+    <glamorous(input)
+      checked={false}
+      id="3 rating"
+      name="StarRating"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      type="radio"
+      value="3 rating"
+    />
     <label
       aria-label="3 rating"
       htmlFor="3 rating"
     >
-      <input
-        checked={false}
-        id="3 rating"
-        name="StarRating"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        style={
-          Object {
-            "WebkitAppearance": "none",
-          }
-        }
-        type="radio"
-        value="3 rating"
-      />
       ☆
     </label>
   </li>
   <li>
+    <glamorous(input)
+      checked={false}
+      id="4 rating"
+      name="StarRating"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      type="radio"
+      value="4 rating"
+    />
     <label
       aria-label="4 rating"
       htmlFor="4 rating"
     >
-      <input
-        checked={false}
-        id="4 rating"
-        name="StarRating"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        style={
-          Object {
-            "WebkitAppearance": "none",
-          }
-        }
-        type="radio"
-        value="4 rating"
-      />
       ☆
     </label>
   </li>
   <li>
+    <glamorous(input)
+      checked={false}
+      id="5 rating"
+      name="StarRating"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      type="radio"
+      value="5 rating"
+    />
     <label
       aria-label="5 rating"
       htmlFor="5 rating"
     >
-      <input
-        checked={false}
-        id="5 rating"
-        name="StarRating"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        style={
-          Object {
-            "WebkitAppearance": "none",
-          }
-        }
-        type="radio"
-        value="5 rating"
-      />
       ☆
     </label>
   </li>
   <li>
+    <glamorous(input)
+      checked={false}
+      id="6 rating"
+      name="StarRating"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      type="radio"
+      value="6 rating"
+    />
     <label
       aria-label="6 rating"
       htmlFor="6 rating"
     >
-      <input
-        checked={false}
-        id="6 rating"
-        name="StarRating"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        style={
-          Object {
-            "WebkitAppearance": "none",
-          }
-        }
-        type="radio"
-        value="6 rating"
-      />
       ☆
     </label>
   </li>
   <li>
+    <glamorous(input)
+      checked={false}
+      id="7 rating"
+      name="StarRating"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      type="radio"
+      value="7 rating"
+    />
     <label
       aria-label="7 rating"
       htmlFor="7 rating"
     >
-      <input
-        checked={false}
-        id="7 rating"
-        name="StarRating"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        style={
-          Object {
-            "WebkitAppearance": "none",
-          }
-        }
-        type="radio"
-        value="7 rating"
-      />
       ☆
     </label>
   </li>
   <li>
+    <glamorous(input)
+      checked={false}
+      id="8 rating"
+      name="StarRating"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      type="radio"
+      value="8 rating"
+    />
     <label
       aria-label="8 rating"
       htmlFor="8 rating"
     >
-      <input
-        checked={false}
-        id="8 rating"
-        name="StarRating"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        style={
-          Object {
-            "WebkitAppearance": "none",
-          }
-        }
-        type="radio"
-        value="8 rating"
-      />
       ☆
     </label>
   </li>
   <li>
+    <glamorous(input)
+      checked={false}
+      id="9 rating"
+      name="StarRating"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      type="radio"
+      value="9 rating"
+    />
     <label
       aria-label="9 rating"
       htmlFor="9 rating"
     >
-      <input
-        checked={false}
-        id="9 rating"
-        name="StarRating"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        style={
-          Object {
-            "WebkitAppearance": "none",
-          }
-        }
-        type="radio"
-        value="9 rating"
-      />
       ☆
     </label>
   </li>
   <li>
+    <glamorous(input)
+      checked={false}
+      id="10 rating"
+      name="StarRating"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      type="radio"
+      value="10 rating"
+    />
     <label
       aria-label="10 rating"
       htmlFor="10 rating"
     >
-      <input
-        checked={false}
-        id="10 rating"
-        name="StarRating"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        style={
-          Object {
-            "WebkitAppearance": "none",
-          }
-        }
-        type="radio"
-        value="10 rating"
-      />
       ☆
     </label>
   </li>
