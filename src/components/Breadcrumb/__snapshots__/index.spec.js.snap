@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+<nav
+  aria-label="Breadcrumb"
+>
+  <glamorous(ol)>
+    <glamorous(li)>
+      <a
+        href="#one"
+      >
+        One
+      </a>
+    </glamorous(li)>
+    <glamorous(li)>
+      <a
+        href="#two"
+      >
+        Two
+      </a>
+    </glamorous(li)>
+    <li>
+      <a
+        aria-current="page"
+        href="#three"
+      >
+        Three
+      </a>
+    </li>
+  </glamorous(ol)>
+</nav>
+`;
