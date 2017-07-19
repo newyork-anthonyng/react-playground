@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly when not selected 1`] = `
+<glamorous(div)
+  aria-checked="false"
+  onClick={[Function]}
+  role="radio"
+  selected={false}
+  tabIndex="-1"
+>
+  <h1>
+    Hello
+  </h1>
+</glamorous(div)>
+`;
+
+exports[`should render correctly when selected 1`] = `
+<glamorous(div)
+  aria-checked="true"
+  onClick={[Function]}
+  role="radio"
+  selected={true}
+  tabIndex="0"
+>
+  <h1>
+    Hello
+  </h1>
+</glamorous(div)>
+`;

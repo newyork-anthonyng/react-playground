@@ -1,57 +1,53 @@
 import React, { Component, Children, cloneElement } from 'react';
+import Radio from '../Radio';
 import T from 'prop-types';
 import glamorous from 'glamorous';
 
-const CheckedRadio = glamorous.div(
-  {
-    '&::before': {
-      border: '1px solid black',
-      borderRadius: '100%',
-      content: `''`,
-      display: 'inline-block',
-      height: '10px',
-      marginRight: '5px',
-      width: '10px',
-    },
-  },
-  (props) => ({
-    '&::before': {
-      backgroundColor: props.selected ? 'tomato' : '',
-    },
-  })
-);
-
-export class Radio extends Component {
-  render() {
-    const { selected, children } = this.props;
-
-    return (
-      <CheckedRadio
-        role="radio"
-        tabIndex={selected ? '0' : '-1'}
-        aria-checked={selected ? 'true' : 'false'}
-        selected={selected}
-      >
-        {children}
-      </CheckedRadio>
-    );
-  }
-}
-
-Radio.defaultProps = {
-  selected: false,
-  children: T.node.isRequired,
-};
-
-Radio.propTypes = {
-  selected: T.bool.isRequired,
-};
-
-export class RadioGroup extends Component {
+class RadioGroup extends Component {
   constructor() {
     super();
 
     this.renderRadio = this.renderRadio.bind(this);
+    this.handleRadioClick = this.handleRadioClick.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
+  }
+
+  componentDidUpdate() {
+    var selectedRadio = this.container.querySelector('[aria-checked="true"]');
+    selectedRadio.focus();
+  }
+
+  handleKeyDown(e) {
+    const { onChange } = this.props;
+    let selectedIndex;
+    React.Children.forEach(this.props.children, (radio, i) => {
+      if (radio.props.selected && selectedIndex === undefined) {
+        selectedIndex = i;
+      }
+    });
+
+    switch (e.keyCode) {
+      case 37: // LEFT
+      case 38: // UP
+      {
+        let newIndex = selectedIndex - 1;
+        if (newIndex < 0) newIndex = React.Children.count(this.props.children) - 1;
+        onChange(newIndex);
+        break;
+      }
+      case 39: // RIGHT
+      case 40: // DOWN
+      {
+        let newIndex = selectedIndex + 1;
+        if (newIndex >= React.Children.count(this.props.children)) newIndex = 0;
+        onChange(newIndex);
+        break;
+      }
+    }
+  }
+
+  handleRadioClick(index) {
+    return () => this.props.onChange(index);
   }
 
   renderRadio() {
@@ -60,15 +56,20 @@ export class RadioGroup extends Component {
     let isSelected = false;
 
     return (
-      Children.map(children, radio => {
+      Children.map(children, (radio, i) => {
         if (radio.props.selected) {
           if (isSelected) {
-            return cloneElement( radio, { selected: false });
+            return cloneElement(radio, {
+              selected: false,
+              onClick: this.handleRadioClick(i),
+            });
           }
 
           isSelected = true;
         }
-        return radio;
+        return cloneElement(radio, {
+          onClick: this.handleRadioClick(i),
+        });
       })
     );
   }
@@ -77,7 +78,12 @@ export class RadioGroup extends Component {
     const { label } = this.props;
 
     return (
-      <div role="radiogroup" aria-label={label}>
+      <div
+        role="radiogroup"
+        aria-label={label}
+        onKeyDown={this.handleKeyDown}
+        ref={(container) => { this.container = container; }}
+      >
         {this.renderRadio()}
       </div>
     );
@@ -93,3 +99,5 @@ RadioGroup.propTypes = {
   label: T.string.isRequired,
   onChange: T.func.isRequired,
 };
+
+export default RadioGroup;
