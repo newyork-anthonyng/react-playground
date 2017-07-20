@@ -12,3 +12,4 @@ import Slider from './Slider';
 import HeadSpace from './HeadSpace';
 import Breadcrumb from './Breadcrumb';
 import RadioGroup from './RadioGroup';
+import Alert from './Alert';

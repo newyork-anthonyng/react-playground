@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render children correctly 1`] = `
+<glamorous(div)
+  aria-atomic="true"
+  aria-live="assertive"
+  role="alert"
+>
+  <h1>
+    Hello
+  </h1>
+  <h2>
+    Yo Yo Yo
+  </h2>
+</glamorous(div)>
+`;
