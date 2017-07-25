@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+<dt
+  aria-level="3"
+  role="heading"
+>
+  <button
+    aria-controls="some-element-id"
+    aria-expanded="false"
+    id="my-element-id"
+    onClick={[Function]}
+  >
+    <h1>
+      Accordion Title
+    </h1>
+  </button>
+</dt>
+`;

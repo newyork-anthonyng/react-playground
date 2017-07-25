@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly when not open 1`] = `null`;
+
+exports[`should render correctly when open 1`] = `
+<dd
+  aria-labelledBy="some-element-id"
+  role="region"
+>
+  <h1>
+    I am content
+  </h1>
+</dd>
+`;
