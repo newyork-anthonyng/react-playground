@@ -82,7 +82,6 @@ class ModalDialog extends Component {
 
   handleBeginningFocus = () => {
     // focus back to the last element in the dialog
-    console.log('handle beginning focus');
     this.focusLastDescendant();
   };
 
@@ -114,8 +113,6 @@ class ModalDialog extends Component {
     );
   }
 }
-
-ModalDialog.defaultProps = {};
 
 ModalDialog.propTypes = {
   children: T.node.isRequired,

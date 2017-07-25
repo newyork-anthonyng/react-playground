@@ -140,7 +140,7 @@ it('should run callback when clicking on Radio', () => {
   expect(cb.mock.calls[0][0]).toEqual(1);
 });
 
-fit('should focus on newly selected Radio', () => {
+it('should focus on newly selected Radio', () => {
   const wrapper = mount(
     <RadioGroup label="Pizza">
       <Radio selected>Regular Cheese</Radio>
