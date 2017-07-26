@@ -4,7 +4,7 @@ exports[`should render correctly when not open 1`] = `null`;
 
 exports[`should render correctly when open 1`] = `
 <dd
-  aria-labelledBy="some-element-id"
+  aria-labelledby="some-element-id"
   role="region"
 >
   <h1>

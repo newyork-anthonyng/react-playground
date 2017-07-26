@@ -27,11 +27,11 @@ AccordionTitle.defaultProps = {
 };
 
 AccordionTitle.propTypes = {
-  children: T.node.isRequired,
-  isOpen: T.bool.isRequired,
-  ariaControls: T.string.isRequired,
-  id: T.string.isRequired,
-  onClick: T.func.isRequired,
+  children: T.node,
+  isOpen: T.bool,
+  ariaControls: T.string,
+  id: T.string,
+  onClick: T.func,
 };
 
 export default AccordionTitle;

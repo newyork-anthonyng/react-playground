@@ -12,7 +12,7 @@ const AccordionContent = ({
   return (
     <dd
       role="region"
-      aria-labelledBy={ariaLabelledBy}
+      aria-labelledby={ariaLabelledBy}
     >
       {children}
     </dd>
@@ -25,10 +25,10 @@ AccordionContent.defaultProps = {
 };
 
 AccordionContent.propTypes = {
-  ariaLabelledBy: T.string.isRequired,
-  id: T.string.isRequired,
-  isOpen: T.bool.isRequired,
-  children: T.node.isRequired,
+  ariaLabelledBy: T.string,
+  id: T.string,
+  isOpen: T.bool,
+  children: T.node,
 };
 
 export default AccordionContent;
