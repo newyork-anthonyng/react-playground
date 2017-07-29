@@ -7,13 +7,17 @@ const AccordionTitle = ({
   isOpen,
   ariaControls,
   onClick,
+  onKeyDown,
   id,
+  buttonRef,
 }) => (
   <dt role="heading" aria-level="3">
     <button
       aria-expanded={`${isOpen}`}
       aria-controls={ariaControls}
       onClick={onClick}
+      onKeyDown={onKeyDown}
+      ref={buttonRef}
       id={id}
     >
       {children}
@@ -32,6 +36,8 @@ AccordionTitle.propTypes = {
   ariaControls: T.string,
   id: T.string,
   onClick: T.func,
+  onKeyDown: T.func,
+  buttonRef: T.func,
 };
 
 export default AccordionTitle;

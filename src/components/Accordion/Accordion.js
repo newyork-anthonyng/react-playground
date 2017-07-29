@@ -15,6 +15,7 @@ class Accordion extends Component {
     const {
       isOpen,
       onClick,
+      onKeyDown,
     } = this.props;
 
     const contentId = `${this.uniqueId}-content`;
@@ -29,6 +30,8 @@ class Accordion extends Component {
             onClick,
             id: titleId,
             ariaControls: contentId,
+            onKeyDown: onKeyDown,
+            buttonRef: (button) => this.button = button,
           }
         );
       } else if (child.type === AccordionContent) {
@@ -61,6 +64,7 @@ Accordion.propTypes = {
   children: T.node,
   onClick: T.func,
   isOpen: T.bool,
+  onKeyDown: T.func,
 };
 
 export default Accordion;

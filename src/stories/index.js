@@ -14,3 +14,4 @@ import Breadcrumb from './Breadcrumb';
 import RadioGroup from './RadioGroup';
 import Alert from './Alert';
 import ModalDialog from './ModalDialog';
+import Accordion from './Accordion';
