@@ -1,24 +1,24 @@
-import React, { Component, Children } from 'react';
-import T from 'prop-types';
-import glamorous from 'glamorous';
+import React, { Component, Children } from "react";
+import T from "prop-types";
+import glamorous from "glamorous";
 
 const List = glamorous.ol({
-  display: 'flex',
-  listStyle: 'none',
-  padding: 0,
+  display: "flex",
+  listStyle: "none",
+  padding: 0
 });
 
 const Crumb = glamorous.li({
-  '&::after': {
+  "&::after": {
     content: `''`,
-    borderRight: '2px solid black',
-    display: 'inline-block',
-    height: '16px',
-    marginRight: '10px',
-    paddingRight: '5px',
-    transform: 'rotate(13deg)',
-    width: '3px',
-  },
+    borderRight: "2px solid black",
+    display: "inline-block",
+    height: "16px",
+    marginRight: "10px",
+    paddingRight: "5px",
+    transform: "rotate(13deg)",
+    width: "3px"
+  }
 });
 
 class Breadcrumb extends Component {
@@ -36,15 +36,15 @@ class Breadcrumb extends Component {
       if (i === childrenCount - 1) {
         return (
           <li>
-            {
-              React.cloneElement(link, { 'aria-current': 'page' })
-            }
+            {React.cloneElement(link, { "aria-current": "page" })}
           </li>
         );
       }
 
       return (
-        <Crumb>{link}</Crumb>
+        <Crumb>
+          {link}
+        </Crumb>
       );
     });
   }
@@ -55,7 +55,7 @@ class Breadcrumb extends Component {
     return (
       <nav aria-label="Breadcrumb">
         <List>
-          { this.renderList() }
+          {this.renderList()}
         </List>
       </nav>
     );
@@ -63,7 +63,7 @@ class Breadcrumb extends Component {
 }
 
 Breadcrumb.propTypes = {
-  children: T.node,
+  children: T.node
 };
 
 export default Breadcrumb;

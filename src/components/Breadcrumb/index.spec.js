@@ -1,9 +1,9 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import toJSON from 'enzyme-to-json';
-import Breadcrumb from './';
+import React from "react";
+import { shallow } from "enzyme";
+import toJSON from "enzyme-to-json";
+import Breadcrumb from "./";
 
-it('should render correctly', () => {
+it("should render correctly", () => {
   const wrapper = shallow(
     <Breadcrumb>
       <a href="#one">One</a>
@@ -15,7 +15,7 @@ it('should render correctly', () => {
   expect(toJSON(wrapper)).toMatchSnapshot();
 });
 
-it('should render the last item with correct aria label', () => {
+it("should render the last item with correct aria label", () => {
   const wrapper = shallow(
     <Breadcrumb>
       <a href="#one">One</a>
@@ -23,7 +23,7 @@ it('should render the last item with correct aria label', () => {
       <a href="#three">Three</a>
     </Breadcrumb>
   );
-  const lastLink = wrapper.find('a').last();
+  const lastLink = wrapper.find("a").last();
 
-  expect(lastLink.props()['aria-current']).toEqual('page');
+  expect(lastLink.props()["aria-current"]).toEqual("page");
 });

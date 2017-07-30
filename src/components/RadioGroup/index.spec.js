@@ -1,10 +1,10 @@
-import React from 'react';
-import { shallow, mount } from 'enzyme';
-import toJSON from 'enzyme-to-json';
-import RadioGroup from './';
-import Radio from '../Radio';
+import React from "react";
+import { shallow, mount } from "enzyme";
+import toJSON from "enzyme-to-json";
+import RadioGroup from "./";
+import Radio from "../Radio";
 
-it('should render correctly', () => {
+it("should render correctly", () => {
   const wrapper = shallow(
     <RadioGroup label="Pizza">
       <Radio selected>Regular Cheese</Radio>
@@ -13,7 +13,7 @@ it('should render correctly', () => {
   );
 });
 
-it('should only allow one selected Radio', () => {
+it("should only allow one selected Radio", () => {
   const wrapper = mount(
     <RadioGroup label="Pizza">
       <Radio selected>Regular Cheese</Radio>
@@ -26,8 +26,8 @@ it('should only allow one selected Radio', () => {
   expect(selectedElements.length).toEqual(1);
 });
 
-describe('Keyboard events', () => {
-  it('should run callback when pressing up', () => {
+describe("Keyboard events", () => {
+  it("should run callback when pressing up", () => {
     const cb = jest.fn();
     const wrapper = shallow(
       <RadioGroup label="Pizza" onChange={cb}>
@@ -37,13 +37,13 @@ describe('Keyboard events', () => {
       </RadioGroup>
     );
 
-    wrapper.simulate('keydown', { keyCode: 38 });
+    wrapper.simulate("keydown", { keyCode: 38 });
 
     expect(cb).toHaveBeenCalledTimes(1);
     expect(cb.mock.calls[0][0]).toEqual(0);
   });
 
-  it('should run callback when pressing left', () => {
+  it("should run callback when pressing left", () => {
     const cb = jest.fn();
     const wrapper = shallow(
       <RadioGroup label="Pizza" onChange={cb}>
@@ -53,13 +53,13 @@ describe('Keyboard events', () => {
       </RadioGroup>
     );
 
-    wrapper.simulate('keydown', { keyCode: 37 });
+    wrapper.simulate("keydown", { keyCode: 37 });
 
     expect(cb).toHaveBeenCalledTimes(1);
     expect(cb.mock.calls[0][0]).toEqual(0);
   });
 
-  it('should run callback when pressing up on first element', () => {
+  it("should run callback when pressing up on first element", () => {
     const cb = jest.fn();
     const wrapper = shallow(
       <RadioGroup label="Pizza" onChange={cb}>
@@ -69,13 +69,13 @@ describe('Keyboard events', () => {
       </RadioGroup>
     );
 
-    wrapper.simulate('keydown', { keyCode: 38 });
+    wrapper.simulate("keydown", { keyCode: 38 });
 
     expect(cb).toHaveBeenCalledTimes(1);
     expect(cb.mock.calls[0][0]).toEqual(2);
   });
 
-  it('should run callback when pressing down', () => {
+  it("should run callback when pressing down", () => {
     const cb = jest.fn();
     const wrapper = shallow(
       <RadioGroup label="Pizza" onChange={cb}>
@@ -85,13 +85,13 @@ describe('Keyboard events', () => {
       </RadioGroup>
     );
 
-    wrapper.simulate('keydown', { keyCode: 40 });
+    wrapper.simulate("keydown", { keyCode: 40 });
 
     expect(cb).toHaveBeenCalledTimes(1);
     expect(cb.mock.calls[0][0]).toEqual(2);
   });
 
-  it('should run callback when pressing right', () => {
+  it("should run callback when pressing right", () => {
     const cb = jest.fn();
     const wrapper = shallow(
       <RadioGroup label="Pizza" onChange={cb}>
@@ -101,13 +101,13 @@ describe('Keyboard events', () => {
       </RadioGroup>
     );
 
-    wrapper.simulate('keydown', { keyCode: 39 });
+    wrapper.simulate("keydown", { keyCode: 39 });
 
     expect(cb).toHaveBeenCalledTimes(1);
     expect(cb.mock.calls[0][0]).toEqual(2);
   });
 
-  it('should run callback when pressing down on last element', () => {
+  it("should run callback when pressing down on last element", () => {
     const cb = jest.fn();
     const wrapper = shallow(
       <RadioGroup label="Pizza" onChange={cb}>
@@ -117,14 +117,14 @@ describe('Keyboard events', () => {
       </RadioGroup>
     );
 
-    wrapper.simulate('keydown', { keyCode: 40 });
+    wrapper.simulate("keydown", { keyCode: 40 });
 
     expect(cb).toHaveBeenCalledTimes(1);
     expect(cb.mock.calls[0][0]).toEqual(0);
   });
 });
 
-it('should run callback when clicking on Radio', () => {
+it("should run callback when clicking on Radio", () => {
   const cb = jest.fn();
   const wrapper = shallow(
     <RadioGroup label="Pizza" onChange={cb}>
@@ -134,13 +134,13 @@ it('should run callback when clicking on Radio', () => {
   );
 
   const radio = wrapper.find(Radio).at(1);
-  radio.simulate('click');
+  radio.simulate("click");
 
   expect(cb).toHaveBeenCalledTimes(1);
   expect(cb.mock.calls[0][0]).toEqual(1);
 });
 
-it('should focus on newly selected Radio', () => {
+it("should focus on newly selected Radio", () => {
   const wrapper = mount(
     <RadioGroup label="Pizza">
       <Radio selected>Regular Cheese</Radio>
@@ -149,7 +149,7 @@ it('should focus on newly selected Radio', () => {
   );
   // spy on focus method
   const firstRadio = wrapper.find('[role="radio"]').get(0);
-  jest.spyOn(firstRadio, 'focus');
+  jest.spyOn(firstRadio, "focus");
 
   wrapper.update();
 

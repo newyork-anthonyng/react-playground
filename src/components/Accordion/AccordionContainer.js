@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import * as KeyCodes from './keyCodes';
-import T from 'prop-types';
+import React, { Component } from "react";
+import * as KeyCodes from "./keyCodes";
+import T from "prop-types";
 
 class AccordionContainer extends Component {
   constructor(props) {
@@ -25,7 +25,7 @@ class AccordionContainer extends Component {
           break;
         case KeyCodes.END:
           this.refs[
-              `accordion-child-${React.Children.count(this.props.children) - 1}`
+            `accordion-child-${React.Children.count(this.props.children) - 1}`
           ].button.focus();
           break;
         case KeyCodes.ENTER:
@@ -46,7 +46,7 @@ class AccordionContainer extends Component {
   scrollUp = index => {
     let previousIndex = index - 1;
     if (previousIndex < 0)
-    previousIndex = React.Children.count(this.props.children) - 1;
+      previousIndex = React.Children.count(this.props.children) - 1;
 
     this.refs[`accordion-child-${previousIndex}`].button.focus();
   };
@@ -84,7 +84,7 @@ class AccordionContainer extends Component {
 }
 
 AccordionContainer.propTypes = {
-  children: T.node.isRequired,
+  children: T.node.isRequired
 };
 
 export default AccordionContainer;

@@ -3,7 +3,7 @@ var aria = aria || {};
 
 aria.Utils = aria.Utils || {};
 
-(function () {
+(function() {
   /*
    * When util functions move focus around, set this true so the focus listener
    * can ignore the events.
@@ -267,23 +267,25 @@ aria.Utils = aria.Utils || {};
   //   }
   // }; // end trapFocus
 
-  window.openDialog = function (dialogId, focusAfterClosed, focusFirst) {
+  window.openDialog = function(dialogId, focusAfterClosed, focusFirst) {
     var dialog = new aria.Dialog(dialogId, focusAfterClosed, focusFirst);
   };
 
-  window.closeDialog = function (closeButton) {
+  window.closeDialog = function(closeButton) {
     var topDialog = aria.getCurrentDialog();
     if (topDialog.dialogNode.contains(closeButton)) {
       topDialog.close();
     }
   }; // end closeDialog
 
-  window.replaceDialog = function (newDialogId, newFocusAfterClosed,
-      newFocusFirst) {
+  window.replaceDialog = function(
+    newDialogId,
+    newFocusAfterClosed,
+    newFocusFirst
+  ) {
     var topDialog = aria.getCurrentDialog();
     if (topDialog.dialogNode.contains(document.activeElement)) {
       topDialog.replace(newDialogId, newFocusAfterClosed, newFocusFirst);
     }
   }; // end replaceDialog
-
 })();

@@ -1,19 +1,16 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import toJSON from 'enzyme-to-json';
-import Radio from './';
+import React from "react";
+import { shallow } from "enzyme";
+import toJSON from "enzyme-to-json";
+import Radio from "./";
 
 const defaultProps = {
   selected: false,
-  onClick: () => {},
+  onClick: () => {}
 };
 
-it('should render correctly when selected', () => {
+it("should render correctly when selected", () => {
   const wrapper = shallow(
-    <Radio
-      {...defaultProps}
-      selected
-    >
+    <Radio {...defaultProps} selected>
       <h1>Hello</h1>
     </Radio>
   );
@@ -21,12 +18,9 @@ it('should render correctly when selected', () => {
   expect(toJSON(wrapper)).toMatchSnapshot();
 });
 
-it('should render correctly when not selected', () => {
+it("should render correctly when not selected", () => {
   const wrapper = shallow(
-    <Radio
-      {...defaultProps}
-      selected={false}
-    >
+    <Radio {...defaultProps} selected={false}>
       <h1>Hello</h1>
     </Radio>
   );
@@ -34,18 +28,15 @@ it('should render correctly when not selected', () => {
   expect(toJSON(wrapper)).toMatchSnapshot();
 });
 
-it('should run callback when clicked', () => {
+it("should run callback when clicked", () => {
   const cb = jest.fn();
   const wrapper = shallow(
-    <Radio
-      {...defaultProps}
-      onClick={cb}
-    >
+    <Radio {...defaultProps} onClick={cb}>
       <h1>Hello</h1>
     </Radio>
   );
 
-  wrapper.simulate('click');
+  wrapper.simulate("click");
 
   expect(cb).toHaveBeenCalledTimes(1);
 });

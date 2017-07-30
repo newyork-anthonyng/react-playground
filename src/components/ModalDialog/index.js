@@ -1,31 +1,31 @@
-import React, { Component } from 'react';
-import T from 'prop-types';
-import glamorous from 'glamorous';
+import React, { Component } from "react";
+import T from "prop-types";
+import glamorous from "glamorous";
 
 const ModalOverlay = glamorous.div({
-  position: 'fixed',
-  top: '0',
-  bottom: '0',
-  left: '0',
-  right: '0',
-  zIndex: '100',
-  backgroundColor: 'black',
-  opacity: '0.6',
+  position: "fixed",
+  top: "0",
+  bottom: "0",
+  left: "0",
+  right: "0",
+  zIndex: "100",
+  backgroundColor: "black",
+  opacity: "0.6"
 });
 
 const ModalContainer = glamorous.div({
-  position: 'fixed',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  zIndex: '101',
-  backgroundColor: 'white',
-  padding: '50px',
+  position: "fixed",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  zIndex: "101",
+  backgroundColor: "white",
+  padding: "50px"
 });
 
 class ModalDialog extends Component {
   componentDidMount() {
-    window.addEventListener('keyup', this.handleKeyUp);
+    window.addEventListener("keyup", this.handleKeyUp);
 
     this.focusFirstDescendant();
   }
@@ -64,11 +64,11 @@ class ModalDialog extends Component {
   };
 
   componentWillUnmount() {
-    window.removeEventListener('keyup', this.handleKeyUp);
+    window.removeEventListener("keyup", this.handleKeyUp);
 
     if (
       this.props.focusElementAfterClose &&
-      typeof this.props.focusElementAfterClose.focus === 'function'
+      typeof this.props.focusElementAfterClose.focus === "function"
     ) {
       this.props.focusElementAfterClose.focus();
     }
@@ -94,10 +94,10 @@ class ModalDialog extends Component {
     // add a reference to each child
     const children = React.Children.map(this.props.children, function(
       child,
-      index,
+      index
     ) {
       return React.cloneElement(child, {
-        ref: `child-${index}`,
+        ref: `child-${index}`
       });
     });
 
@@ -117,7 +117,7 @@ class ModalDialog extends Component {
 ModalDialog.propTypes = {
   children: T.node.isRequired,
   onClose: T.func.isRequired,
-  focusElementAfterClose: T.element.isRequired,
+  focusElementAfterClose: T.element.isRequired
 };
 
 export default ModalDialog;

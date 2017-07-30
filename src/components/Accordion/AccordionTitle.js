@@ -1,6 +1,6 @@
-import React from 'react';
-import T from 'prop-types';
-import noop from '../../utility/noop';
+import React from "react";
+import T from "prop-types";
+import noop from "../../utility/noop";
 
 const AccordionTitle = ({
   children,
@@ -9,8 +9,8 @@ const AccordionTitle = ({
   onClick,
   onKeyDown,
   id,
-  buttonRef,
-}) => (
+  buttonRef
+}) =>
   <dt role="heading" aria-level="3">
     <button
       aria-expanded={`${isOpen}`}
@@ -22,12 +22,11 @@ const AccordionTitle = ({
     >
       {children}
     </button>
-  </dt>
-);
+  </dt>;
 
 AccordionTitle.defaultProps = {
   isOpen: false,
-  onClick: noop,
+  onClick: noop
 };
 
 AccordionTitle.propTypes = {
@@ -37,7 +36,7 @@ AccordionTitle.propTypes = {
   id: T.string,
   onClick: T.func,
   onKeyDown: T.func,
-  buttonRef: T.func,
+  buttonRef: T.func
 };
 
 export default AccordionTitle;

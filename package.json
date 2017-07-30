@@ -7,6 +7,9 @@
     "@storybook/react": "^3.1.5",
     "enzyme": "^2.9.1",
     "enzyme-to-json": "^1.5.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.0.2",
+    "prettier": "^1.5.3",
     "react-dom": "^15.6.1",
     "react-scripts": "1.0.7",
     "react-test-renderer": "^15.6.1"
@@ -25,6 +28,14 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "prettier": "prettier --write \"src/components/**/*.js\"",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run prettier",
+      "git add"
+    ]
   }
 }

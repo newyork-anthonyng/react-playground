@@ -1,23 +1,23 @@
-import React, { Component } from 'react';
-import T from 'prop-types';
-import glamorous from 'glamorous';
+import React, { Component } from "react";
+import T from "prop-types";
+import glamorous from "glamorous";
 
 const CheckedRadio = glamorous.div(
   {
-    '&::before': {
-      border: '1px solid black',
-      borderRadius: '100%',
+    "&::before": {
+      border: "1px solid black",
+      borderRadius: "100%",
       content: `''`,
-      display: 'inline-block',
-      height: '10px',
-      marginRight: '5px',
-      width: '10px',
-    },
+      display: "inline-block",
+      height: "10px",
+      marginRight: "5px",
+      width: "10px"
+    }
   },
-  (props) => ({
-    '&::before': {
-      backgroundColor: props.selected ? 'tomato' : '',
-    },
+  props => ({
+    "&::before": {
+      backgroundColor: props.selected ? "tomato" : ""
+    }
   })
 );
 
@@ -28,8 +28,8 @@ class Radio extends Component {
     return (
       <CheckedRadio
         role="radio"
-        tabIndex={selected ? '0' : '-1'}
-        aria-checked={selected ? 'true' : 'false'}
+        tabIndex={selected ? "0" : "-1"}
+        aria-checked={selected ? "true" : "false"}
         selected={selected}
         onClick={onClick}
       >
@@ -41,13 +41,13 @@ class Radio extends Component {
 
 Radio.defaultProps = {
   selected: false,
-  onClick: () => {},
+  onClick: () => {}
 };
 
 Radio.propTypes = {
   selected: T.bool.isRequired,
   children: T.node.isRequired,
-  onClick: T.func.isRequired,
+  onClick: T.func.isRequired
 };
 
 export default Radio;

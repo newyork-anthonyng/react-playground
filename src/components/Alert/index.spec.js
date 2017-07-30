@@ -1,9 +1,9 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import toJSON from 'enzyme-to-json';
-import Alert from './';
+import React from "react";
+import { shallow } from "enzyme";
+import toJSON from "enzyme-to-json";
+import Alert from "./";
 
-it('should render children correctly', () => {
+it("should render children correctly", () => {
   const wrapper = shallow(
     <Alert>
       <h1>Hello</h1>

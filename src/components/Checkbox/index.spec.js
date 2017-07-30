@@ -1,73 +1,48 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import toJSON from 'enzyme-to-json';
-import noop from '../../utility/noop';
-import Checkbox from './';
+import React from "react";
+import { shallow } from "enzyme";
+import toJSON from "enzyme-to-json";
+import noop from "../../utility/noop";
+import Checkbox from "./";
 
 const defaultProps = {
   checked: false,
   onChange: noop,
-  label: 'Unlabelled checkbox',
+  label: "Unlabelled checkbox"
 };
 
-it('should render correctly when checked', () => {
-  const wrapper = shallow(
-    <Checkbox
-      {...defaultProps}
-      checked
-    />
-  );
+it("should render correctly when checked", () => {
+  const wrapper = shallow(<Checkbox {...defaultProps} checked />);
   expect(toJSON(wrapper)).toMatchSnapshot();
 });
 
-it('should render correctly when unchecked', () => {
-  const wrapper = shallow(
-    <Checkbox
-      {...defaultProps}
-      checked={false}
-    />
-  );
+it("should render correctly when unchecked", () => {
+  const wrapper = shallow(<Checkbox {...defaultProps} checked={false} />);
   expect(toJSON(wrapper)).toMatchSnapshot();
 });
 
-it('should run callback when ENTER is pressed', () => {
+it("should run callback when ENTER is pressed", () => {
   const cb = jest.fn();
-  const wrapper = shallow(
-    <Checkbox
-      {...defaultProps}
-      onChange={cb}
-    />
-  );
+  const wrapper = shallow(<Checkbox {...defaultProps} onChange={cb} />);
 
-  wrapper.simulate('keypress', { charCode: 13 });
+  wrapper.simulate("keypress", { charCode: 13 });
 
   expect(cb).toHaveBeenCalledTimes(1);
 });
 
-it('should run callback when SPACEBAR is pressed', () => {
+it("should run callback when SPACEBAR is pressed", () => {
   const cb = jest.fn();
-  const wrapper = shallow(
-    <Checkbox
-      {...defaultProps}
-      onChange={cb}
-    />
-  );
+  const wrapper = shallow(<Checkbox {...defaultProps} onChange={cb} />);
 
-  wrapper.simulate('keypress', { charCode: 32 });
+  wrapper.simulate("keypress", { charCode: 32 });
 
   expect(cb).toHaveBeenCalledTimes(1);
 });
 
-it('should run callback when clicked', () => {
+it("should run callback when clicked", () => {
   const cb = jest.fn();
-  const wrapper = shallow(
-    <Checkbox
-      {...defaultProps}
-      onChange={cb}
-    />
-  );
+  const wrapper = shallow(<Checkbox {...defaultProps} onChange={cb} />);
 
-  wrapper.simulate('click');
+  wrapper.simulate("click");
 
   expect(cb).toHaveBeenCalledTimes(1);
 });

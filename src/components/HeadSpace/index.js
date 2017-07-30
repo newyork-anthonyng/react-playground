@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import T from 'prop-types';
+import React, { Component } from "react";
+import T from "prop-types";
 
 class HeadSpace extends Component {
   constructor() {
@@ -16,25 +16,25 @@ class HeadSpace extends Component {
 
     this.state = {
       isHidden: false,
-      isFixed: false,
+      isFixed: false
     };
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener("scroll", this.handleScroll);
 
     this.startOffset = this.container.offsetHeight;
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener("scroll", this.handleScroll);
   }
 
   handleScroll = () => {
     this.currentScrollPosition = window.pageYOffset;
 
     this.requestTick();
-  }
+  };
 
   requestTick = () => {
     // https://www.html5rocks.com/en/tutorials/speed/animations/
@@ -43,7 +43,7 @@ class HeadSpace extends Component {
       requestAnimationFrame(this.update);
     }
     this.isTicking = true;
-  }
+  };
 
   update = () => {
     this.isTicking = false;
@@ -53,7 +53,8 @@ class HeadSpace extends Component {
     } else if (this.props.showAtBottom && this.isAtEndOfPage()) {
       this.fixHeader();
     } else if (this.isScrolledGreaterThanTolerance()) {
-      const isScrollingDown = this.currentScrollPosition > this.previousScrollPosition;
+      const isScrollingDown =
+        this.currentScrollPosition > this.previousScrollPosition;
 
       if (isScrollingDown) {
         this.hideHeader();
@@ -63,54 +64,62 @@ class HeadSpace extends Component {
     }
 
     this.previousScrollPosition = this.currentScrollPosition;
-  }
+  };
 
   isScrolledGreaterThanTolerance = () => {
     return (
       this.currentScrollPosition > this.startOffset &&
-      Math.abs(this.currentScrollPosition - this.previousScrollPosition) >= this.props.scrollTolerance
+      Math.abs(this.currentScrollPosition - this.previousScrollPosition) >=
+        this.props.scrollTolerance
     );
-  }
+  };
 
   isAtEndOfPage = () => {
-    return (window.innerHeight + this.currentScrollPosition) >= document.body.offsetHeight;
-  }
+    return (
+      window.innerHeight + this.currentScrollPosition >=
+      document.body.offsetHeight
+    );
+  };
 
   resetHeader = () => {
     this.setState({
       isHidden: false,
-      isFixed: false,
+      isFixed: false
     });
-  }
+  };
 
   hideHeader = () => {
     this.setState({ isHidden: true });
-  }
+  };
 
   fixHeader = () => {
     this.setState({
       isFixed: true,
-      isHidden: false,
+      isHidden: false
     });
-  }
+  };
 
   render() {
     const containerStyle = {
-      position: this.state.isFixed ? 'fixed' : 'absolute',
-      transform: this.state.isHidden ? `translate3d(0, -${this.startOffset}px, 0)` : 'translate3d(0, 0, 0)',
+      position: this.state.isFixed ? "fixed" : "absolute",
+      transform: this.state.isHidden
+        ? `translate3d(0, -${this.startOffset}px, 0)`
+        : "translate3d(0, 0, 0)",
       top: 0,
       left: 0,
       right: 0,
-      transition: 'transform 0.3s',
+      transition: "transform 0.3s"
     };
     const placeholderStyle = {
-      height: `${this.startOffset}px`,
+      height: `${this.startOffset}px`
     };
 
     return (
       <div style={placeholderStyle}>
         <div
-          ref={(container) => { this.container = container }}
+          ref={container => {
+            this.container = container;
+          }}
           style={containerStyle}
         >
           {this.props.children}
@@ -122,13 +131,13 @@ class HeadSpace extends Component {
 
 HeadSpace.defaultProps = {
   scrollTolerance: 5,
-  showAtBottom: true,
+  showAtBottom: true
 };
 
 HeadSpace.propTypes = {
   children: T.node.isRequired,
   scrollTolerance: T.number.isRequired,
-  showAtBottom: T.bool.isRequired,
+  showAtBottom: T.bool.isRequired
 };
 
 export default HeadSpace;

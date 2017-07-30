@@ -1,45 +1,45 @@
-import React, { Component } from 'react';
-import T from 'prop-types';
-import noop from '../../utility/noop';
-import glamorous from 'glamorous';
+import React, { Component } from "react";
+import T from "prop-types";
+import noop from "../../utility/noop";
+import glamorous from "glamorous";
 
 const Input = glamorous.input({
-  WebkitAppearance: 'none',
-  ':focus + label': {
-    border: '3px solid blue',
-    borderRadius: '3px',
-  },
+  WebkitAppearance: "none",
+  ":focus + label": {
+    border: "3px solid blue",
+    borderRadius: "3px"
+  }
 });
 
 class StarRating extends Component {
   constructor() {
     super();
 
-    this.filledStar = '★';
-    this.emptyStar = '☆';
+    this.filledStar = "★";
+    this.emptyStar = "☆";
   }
 
-  handleClick = (value) => {
+  handleClick = value => {
     if (this.props.disabled) return noop;
 
     return () => this.props.onChange(value);
-  }
+  };
 
-  handleMouseEnter = (value) => {
+  handleMouseEnter = value => {
     if (this.props.disabled) return noop;
 
     return () => this.props.onMouseEnter(value);
-  }
+  };
 
-  handleMouseLeave = (value) => {
+  handleMouseLeave = value => {
     if (this.props.disabled) return noop;
 
     return () => this.props.onMouseLeave(value);
-  }
+  };
 
   renderStars = () => {
     const stars = [];
-    for(let i = 0; i < this.props.size; i++) {
+    for (let i = 0; i < this.props.size; i++) {
       const key = `${i + 1} rating`;
       stars.push(
         <li key={i}>
@@ -51,25 +51,22 @@ class StarRating extends Component {
             onClick={this.handleClick(i + 1)}
             onMouseEnter={this.handleMouseEnter(i + 1)}
             onMouseLeave={this.handleMouseLeave(i + i)}
-            checked={(i + 1) === this.props.value}
+            checked={i + 1 === this.props.value}
           />
-          <label
-            htmlFor={key}
-            aria-label={key}
-          >
+          <label htmlFor={key} aria-label={key}>
             {i < this.props.value ? this.filledStar : this.emptyStar}
           </label>
         </li>
       );
     }
 
-    return stars
-  }
+    return stars;
+  };
 
   render() {
     return (
       <ul
-        style={{ display: 'flex', listStyle: 'none', padding: 0 }}
+        style={{ display: "flex", listStyle: "none", padding: 0 }}
         role="radiogroup"
         aria-label={`${this.props.value + 1} rating`}
       >
@@ -85,7 +82,7 @@ StarRating.defaultProps = {
   disabled: false,
   onChange: noop,
   onMouseEnter: noop,
-  onMouseLeave: noop,
+  onMouseLeave: noop
 };
 
 StarRating.propTypes = {
@@ -94,7 +91,7 @@ StarRating.propTypes = {
   disabled: T.bool.isRequired,
   onChange: T.func.isRequired,
   onMouseEnter: T.func.isRequired,
-  onMouseLeave: T.func.isRequired,
+  onMouseLeave: T.func.isRequired
 };
 
 export default StarRating;

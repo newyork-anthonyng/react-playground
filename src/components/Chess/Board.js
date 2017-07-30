@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import { DragDropContext } from 'react-dnd';
-import HTML5Backend from 'react-dnd-html5-backend';
-import T from 'prop-types';
-import Knight from './Knight';
-import Square from './Square';
-import BoardSquare from './BoardSquare';
-import { canMoveKnight, moveKnight } from './Game';
+import React, { Component } from "react";
+import { DragDropContext } from "react-dnd";
+import HTML5Backend from "react-dnd-html5-backend";
+import T from "prop-types";
+import Knight from "./Knight";
+import Square from "./Square";
+import BoardSquare from "./BoardSquare";
+import { canMoveKnight, moveKnight } from "./Game";
 
 class Board extends Component {
   renderSquare(index) {
@@ -13,10 +13,7 @@ class Board extends Component {
     const y = Math.floor(index / 8);
 
     return (
-      <div
-        key={index}
-        style={{ width: '12.5%', height: '12.5%' }}
-      >
+      <div key={index} style={{ width: "12.5%", height: "12.5%" }}>
         <BoardSquare x={x} y={y}>
           {this.renderPiece(x, y)}
         </BoardSquare>
@@ -44,12 +41,14 @@ class Board extends Component {
     }
 
     return (
-      <div style={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        height: '100%',
-        width: '100%',
-      }}>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          height: "100%",
+          width: "100%"
+        }}
+      >
         {squares}
       </div>
     );
@@ -57,9 +56,7 @@ class Board extends Component {
 }
 
 Board.propTypes = {
-  knightPosition: T.arrayOf(
-    T.number.isRequired,
-  ).isRequired,
+  knightPosition: T.arrayOf(T.number.isRequired).isRequired
 };
 
 export default DragDropContext(HTML5Backend)(Board);
