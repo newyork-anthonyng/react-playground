@@ -10,6 +10,7 @@ exports[`should render correctly 1`] = `
     aria-expanded="false"
     id="my-element-id"
     onClick={[Function]}
+    onKeyDown={[Function]}
   >
     <h1>
       Accordion Title

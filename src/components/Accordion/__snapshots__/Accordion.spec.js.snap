@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly when not open 1`] = `
+<div>
+  <AccordionTitle
+    ariaControls="mock-uuid-content"
+    buttonRef={[Function]}
+    id="mock-uuid-title"
+    isOpen={false}
+    onClick={[Function]}
+  >
+    <h1>
+      First Title
+    </h1>
+  </AccordionTitle>
+  <AccordionContent
+    ariaLabelledby="mock-uuid-title"
+    id="mock-uuid-content"
+    isOpen={false}
+  >
+    <p>
+      Useful Information goes here
+    </p>
+  </AccordionContent>
+</div>
+`;
+
+exports[`should render correctly when open 1`] = `
+<div>
+  <AccordionTitle
+    ariaControls="mock-uuid-content"
+    buttonRef={[Function]}
+    id="mock-uuid-title"
+    isOpen={true}
+    onClick={[Function]}
+  >
+    <h1>
+      First Title
+    </h1>
+  </AccordionTitle>
+  <AccordionContent
+    ariaLabelledby="mock-uuid-title"
+    id="mock-uuid-content"
+    isOpen={true}
+  >
+    <p>
+      Useful Information goes here
+    </p>
+  </AccordionContent>
+</div>
+`;

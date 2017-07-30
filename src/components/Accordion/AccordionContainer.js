@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import * as KeyCodes from './keyCodes';
 import T from 'prop-types';
 
-
 class AccordionContainer extends Component {
   constructor(props) {
     super(props);

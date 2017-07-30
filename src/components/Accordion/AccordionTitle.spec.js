@@ -9,6 +9,8 @@ const defaultProps = {
   ariaControls: 'some-element-id',
   id: 'my-element-id',
   onClick: noop,
+  onKeyDown: noop,
+  buttonRef: noop,
 };
 
 it('should render correctly', () => {
@@ -34,6 +36,23 @@ it('should run callback when clicked', () => {
 
   const button = wrapper.find('button');
   button.simulate('click');
+
+  expect(cb).toHaveBeenCalledTimes(1);
+});
+
+it('should run callback when pressing a key', () => {
+  const cb = jest.fn();
+  const wrapper = shallow(
+    <AccordionTitle
+      {...defaultProps}
+      onKeyDown={cb}
+    >
+      <h1>Accordion Title</h1>
+    </AccordionTitle>
+  );
+
+  const button = wrapper.find('button');
+  button.simulate('keydown', { keyCode: 38 });
 
   expect(cb).toHaveBeenCalledTimes(1);
 });

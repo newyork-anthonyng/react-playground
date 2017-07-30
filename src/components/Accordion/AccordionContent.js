@@ -16,7 +16,6 @@ const AccordionContent = ({
     >
       {children}
     </dd>
-
   );
 };
 

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+<div>
+  <Accordion
+    isOpen={false}
+    onClick={[Function]}
+    onKeyDown={[Function]}
+  >
+    <AccordionTitle
+      isOpen={false}
+      onClick={[Function]}
+    >
+      First
+    </AccordionTitle>
+    <AccordionContent
+      isOpen={false}
+    >
+      Gold Medal
+    </AccordionContent>
+  </Accordion>
+</div>
+`;

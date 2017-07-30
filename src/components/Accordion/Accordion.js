@@ -44,9 +44,7 @@ class Accordion extends Component {
           }
         );
       } else {
-        throw new Error(`
-          Accordion expected children to be AccordionTitle or AccordionContent, but received ${child.type}
-        `);
+        throw new Error(`Accordion expected children to be AccordionTitle or AccordionContent, but received ${child.type}`);
       }
     });
   }
